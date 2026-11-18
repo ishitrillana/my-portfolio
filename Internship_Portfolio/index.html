@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ishi B. Trillana | Portfolio</title>
+<style>
+/* =========================================================
+   Ishi B. Trillana – Portfolio styles
+   COLORS: change the values in :root below to recolor the site.
+   --teal  = small labels and accents
+   --peri  = your name in the hero, main button
+   --bg    = page background, --card = card background
+   ========================================================= */
+:root{
+--bg:#070D1C;--bg2:#0E1B3A;--card:#0E1930;--card2:#13213F;--line:#1C2A47;--chip:#0B1630;--chipline:#2A3A5E;--ink:#EAF0FF;--muted:#AAB7D4;--teal:#2DE2C9;--peri:#8EA2FF;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 "Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif}
+h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.025em}
+p{margin:0 0 1em}a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--peri);outline-offset:3px;border-radius:6px}
+.w{max-width:1100px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:19;background:#060B19;border-bottom:1px solid #141F38}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.logo{font-weight:900;letter-spacing:.14em;color:#fff;text-decoration:none;font-size:15px}
+.logo b{color:var(--teal)}
+nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav a{color:var(--muted);text-decoration:none;padding:8px 12px;white-space:nowrap;font-size:16.5px}
+nav a:hover{color:#fff}
+.eye{display:block;color:var(--teal);font-weight:800;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.hero{background:radial-gradient(900px 500px at 75% 10%,#16295A 0%,transparent 70%),linear-gradient(#0B1630,#070D1C)}
+.hero .w{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-top:72px;padding-bottom:84px}
+.hero h1{font-size:clamp(46px,7vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1.02;margin:6px 0 26px}
+.hero h1 span{color:var(--peri);display:block}
+.hero p.lead{font-size:19.5px;color:var(--muted);max-width:40ch;margin-bottom:32px}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:17px;padding:15px 24px;border-radius:12px;border:1px solid var(--chipline);color:#fff;background:#0A1429}
+.btn.p{background:var(--peri);border-color:var(--peri);color:#0A1230}
+.btn:hover{filter:brightness(1.1)}
+.pc{background:var(--card2);border:1px solid #243558;border-radius:28px;padding:26px;text-align:center}
+.pc img{display:block;width:100%;aspect-ratio:1/1.05;object-fit:cover;object-position:top;border-radius:20px;border:2px solid #fff;background:#fff}
+.pc h3{font-size:21px;margin:20px 0 4px;letter-spacing:-.01em}
+.pc p{color:var(--muted);margin:0 0 18px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left}
+.mini div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px;line-height:1.4}
+.mini b{display:block;color:var(--teal);font-size:16px;margin-bottom:2px}
+section{padding:84px 0;border-top:1px solid #131E36}
+h2{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.035em}
+.sub{color:var(--muted);margin:14px 0 34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 28px}
+.card h3{font-size:21px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+.card p{color:var(--muted)}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.about .card:first-child p{color:#C3CEE6}
+.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:14px 0 0;padding:0}
+.chips li{background:var(--chip);border:1px solid var(--chipline);border-radius:10px;padding:5px 13px;font-size:14.5px}
+.bar{border-left:3px solid var(--teal);padding-left:16px;margin-top:22px}
+.bar b{display:block;color:#fff}.bar span{color:var(--muted);font-size:15.5px}
+.edu{border-left:4px solid var(--teal);padding-left:18px}
+.edu b{display:block;font-size:18px}.edu span{display:block;color:var(--muted)}
+.proj .chips{margin-top:auto;padding-top:14px}
+.proj{display:flex;flex-direction:column}
+.cert button{all:unset;display:block;box-sizing:border-box;width:100%;cursor:zoom-in;border-radius:12px;overflow:hidden;border:1px solid var(--chipline);margin-top:6px}
+.cert button:focus-visible{outline:3px solid var(--peri);outline-offset:3px}
+.cert img{display:block;width:100%;height:auto}
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1100px);width:100%}
+dialog::backdrop{background:rgba(3,6,16,.85)}
+dialog img{display:block;width:100%;height:auto;border-radius:10px;background:#fff}
+dialog form{margin:0 0 10px;text-align:right}
+dialog form button{font:600 15px "Segoe UI",system-ui,sans-serif;padding:8px 18px;border-radius:8px;border:0;background:var(--card2);color:#fff;cursor:pointer}
+.ct p{margin:0 0 8px}.ct b{color:#C9D4EC}
+footer{border-top:1px solid #131E36;color:var(--muted);font-size:15px;padding:26px 0 30px}
+@media (max-width:900px){
+  .hero .w{grid-template-columns:1fr;gap:40px;padding-top:44px;padding-bottom:56px}
+  .about,.g2,.g3{grid-template-columns:1fr}
+  header .w{flex-wrap:wrap;padding-top:8px;padding-bottom:6px;min-height:0}
+  nav{width:100%}
+  section{padding:60px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<!-- ============ TOP MENU ============ -->
+<header><div class="w">
+  <a class="logo" href="#top">ISHI<b>.</b></a>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<!-- ============ HERO (top of the page) ============ -->
+<div class="hero" id="top"><div class="w">
+  <div>
+    <span class="eye">Information Technology · Data &amp; Business Analytics</span>
+    <h1>Hello, I’m <span>Ishi Trillana.</span></h1>
+    <p class="lead">A motivated Information Technology student specializing in Data and Business Analytics, with foundational knowledge of data analysis, statistical analysis, and data visualization. I enjoy organizing and interpreting data to identify trends and generate meaningful insights that support business decision-making.</p>
+    <div class="btns"><a class="btn p" href="#projects">View my projects</a><a class="btn" href="#contact">Contact me</a></div>
+  </div>
+  <div class="pc">
+    <img src="formal_pic.jfif" width="720" height="320" alt="Portrait of Ishi Baltazar Trillana">
+    <h3>Ishi Baltazar Trillana</h3>
+    <p>BS Information Technology Student</p>
+    <div class="mini">
+      <div><b>Specialization</b>Data &amp; Business Analytics</div>
+      <div><b>Location</b>Hagonoy, Bulacan</div>
+    </div>
+  </div>
+</div></div>
+
+<main>
+<!-- ============ ABOUT: edit the text below ============ -->
+<section id="about"><div class="w">
+  <h2>About Me</h2>
+  <p class="sub">My background, interests, and professional goals.</p>
+  <div class="about">
+    <div class="card">
+      <p>I am a Bachelor of Science in Information Technology student at Bulacan State University – Hagonoy Campus, specializing in Data and Business Analytics. I have foundational knowledge of data analysis, statistical analysis, and data visualization, and I am capable of organizing, interpreting, and analyzing data to identify trends and generate meaningful insights.</p>
+      <p>I bring analytical thinking, problem-solving abilities, attention to detail, and adaptability when working with data and technology. I am interested in applying my analytical knowledge to real-world business challenges and developing data-driven solutions.</p>
+      <p style="font-size:15.5px;margin:0">I am looking forward to gaining practical experience, learning from professionals, and contributing to meaningful workplace projects.</p>
+    </div>
+    <div class="card">
+      <span class="eye">Career focus</span>
+      <h3>Data-driven problem solving</h3>
+      <p>Data analysis · Statistical analysis · Data visualization · Business intelligence · Technology solutions</p>
+      <div class="bar"><b>Professional interests</b><span>Data Analyst · Business Intelligence · IT / Technology</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ EDUCATION: edit the text below ============ -->
+<section id="education"><div class="w">
+  <span class="eye">Academic background</span>
+  <h2>Education</h2>
+  <div class="card edu-wrap" style="margin-top:34px"><div class="edu">
+    <b>Bachelor of Science in Information Technology</b>
+    <span>Bulacan State University – Hagonoy Campus</span>
+    <span>Iba-Carillo Hagonoy, Bulacan · August 2023 – Present</span>
+    <span>Specialization: Data and Business Analytics</span>
+  </div></div>
+</div></section>
+
+<!-- ============ SKILLS: edit the text below ============ -->
+<section id="skills"><div class="w">
+  <span class="eye">Tools &amp; capabilities</span>
+  <h2>Technical &amp; Soft Skills</h2>
+  <p class="sub">Skills listed in my internship resume.</p>
+  <div class="g3">
+    <div class="card"><h3>Data &amp; Analytics</h3><ul class="chips"><li>Microsoft Excel</li><li>Power BI</li><li>Python</li><li>R</li></ul></div>
+    <div class="card"><h3>Programming</h3><ul class="chips"><li>Java</li><li>C++</li><li>JavaScript</li></ul></div>
+    <div class="card"><h3>Web Development</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+    <div class="card"><h3>Database &amp; Tools</h3><ul class="chips"><li>MySQL Workbench</li><li>MS Access</li><li>VS Code</li></ul></div>
+    <div class="card"><h3>Analytical Skills</h3><ul class="chips"><li>Analytical Thinking</li><li>Critical Thinking</li><li>Problem-Solving</li><li>Attention to Detail</li></ul></div>
+    <div class="card"><h3>Professional Skills</h3><ul class="chips"><li>Communication</li><li>Presentation</li><li>Time Management</li><li>Teamwork</li><li>Adaptability</li><li>Willingness to Learn</li></ul></div>
+  </div>
+</div></section>
+
+<!-- ============ PROJECTS: edit the text below ============ -->
+<section id="projects"><div class="w">
+  <h2>Projects</h2>
+  <p class="sub">Projects included in my resume.</p>
+  <div class="g2">
+    <article class="card proj">
+      <span class="eye">Capstone project · 2026</span>
+      <h3>SKIN SIGHT: Smart Insight for Skin Wellness and Treatment Tracking</h3>
+      <p>A mobile and web-based clinic management system built for Seydie Aesthetic Salon and Beauty Lounge in Malolos, Bulacan. It focuses on organizing client information, managing appointments, recording consultations and treatments, and monitoring treatment progress. It also integrates machine learning to analyze historical skin data and generate personalized skincare insights and recommendations.</p>
+      <ul class="chips"><li>Mobile &amp; Web System</li><li>Machine Learning</li><li>Data Management</li><li>Analytics</li></ul>
+    </article>
+    <article class="card proj">
+      <span class="eye">Dashboard project · 2026</span>
+      <h3>MJ’s Motoshop Sales and Inventory Intelligence Dashboard</h3>
+      <p>A Power BI-based tool for performance monitoring, stock control, and parts-model tracking for MJ’s Motoshop. The dashboard is intended to help present sales and inventory information in a more organized and accessible way.</p>
+      <ul class="chips"><li>Power BI</li><li>Dashboard</li><li>Sales Monitoring</li><li>Inventory Tracking</li></ul>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ CERTIFICATES: edit the text below ============ -->
+<section id="certifications"><div class="w">
+  <span class="eye">Learning &amp; development</span>
+  <h2>Seminars &amp; Certificates</h2>
+  <p class="sub">Participation and continued learning activities. Select a certificate to enlarge it.</p>
+  <div class="g2">
+    <article class="card cert">
+      <span class="eye">March 18, 2026 · 3 hours</span>
+      <h3>From Prompt to Production: Building Real AI Applications</h3>
+      <p>Certificate of Participation issued by the Prestigious Organization of Software and Hardware Elite Developers (POSHED), Bulacan State University – Hagonoy Campus, in recognition of active participation in the seminar.</p>
+      <button type="button" data-full aria-label="Enlarge certificate: From Prompt to Production"><img src="AI_Certificate.png" width="1500" height="1061" alt="Certificate of Participation for the From Prompt to Production seminar" loading="lazy"></button>
+    </article>
+    <article class="card cert">
+      <span class="eye">November 5, 2025</span>
+      <h3>IThrive Securely: Trends and Threats Behind Cybersecurity</h3>
+      <p>Certificate of Participation issued by the Prestigious Organization of Software and Hardware Elite Developers (POSHED), Bulacan State University – Hagonoy Campus, in recognition of active participation in the seminar.</p>
+      <button type="button" data-full aria-label="Enlarge certificate: IThrive Securely"><img src="IThrive_Certifcate.png" width="1500" height="1061" alt="Certificate of Participation for the IThrive Securely cybersecurity seminar" loading="lazy"></button>
+    </article>
+  </div>
+</div></section>
+
+<!-- ============ CONTACT: edit the text below ============ -->
+<section id="contact"><div class="w">
+  <span class="eye">Get in touch</span>
+  <h2>Contact Me</h2>
+  <p class="sub">For internship opportunities and professional inquiries.</p>
+  <div class="g2">
+    <div class="card ct"><h3 style="margin-bottom:18px">Contact details</h3>
+      <p><b>Email:</b> <a href="mailto:ishitrillana@gmail.com">ishitrillana@gmail.com</a></p>
+      <p><b>Phone:</b> <a href="tel:+63511417986">+6351-141-7986</a></p>
+      <p style="margin:0"><b>Address:</b> 964 Mercado, Hagonoy, Bulacan</p></div>
+    <div class="card ct"><h3 style="margin-bottom:18px">Professional profile</h3>
+      <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/ishi-trillana" target="_blank" rel="noopener">linkedin.com/in/ishi-trillana ↗</a></p>
+      <p style="font-size:15.5px;color:var(--muted);margin:0">Connect with me to learn more about my academic work, skills, and professional interests.</p></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="w">© <span id="yr">2026</span> Ishi Baltazar Trillana · Personal Portfolio</div></footer>
+
+<!-- Pop-up used to enlarge certificates (do not remove) -->
+<dialog id="viewer" aria-label="Certificate">
+  <form method="dialog"><button aria-label="Close certificate">Close</button></form>
+  <img alt="">
+</dialog>
+<script>
+/* Portfolio scripts: footer year + certificate pop-up viewer */
+(function(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var d=document.getElementById('viewer');
+  document.querySelectorAll('[data-full]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var i=b.querySelector('img'),v=d.querySelector('img');
+      v.src=i.src;v.alt=i.alt;
+      if(d.showModal){d.showModal()}
+    });
+  });
+  d.addEventListener('click',function(e){if(e.target===d){d.close()}});
+})();
+</script>
+</body>
+</html>
